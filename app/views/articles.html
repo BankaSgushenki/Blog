@@ -1,0 +1,9 @@
+<div ng-repeat = "article in articles | filter:division | orderBy:predicate:reverse" class = "article">
+	<img ng-src="{{article.imageSrc}}" class="curved-vt-2">
+	<h2>{{article.title}}</h2>
+	<div class = "article-info"> In {{article.date | date : format}}  by  {{article.author}}
+	</div>
+	<p>{{article.text}}</p>
+</div>
+
+

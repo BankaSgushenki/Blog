@@ -1,0 +1,9 @@
+<div class="jumbotron" ng-controller = "newArticleCtrl">
+  <form name="additionForm" ng-model = "newArticle" novalidate class = "addition-form" ng-submit="submit()">
+  	Author: <input type = "text" required placeholder = "Your name" name = "author" ng-model = "author">
+  	Image: <input type = "text" placeholder = "Image URL"  name = "img" ng-model = "imageUrl">
+  	Title: <input type = "text" required placeholder = "Article's title" name = "title" ng-model = "title" required>
+  	Text:  <textarea name="text" required rows="6" name = "text" ng-model = "text"></textarea>
+  	<input type="submit" value="Send" class="btn">
+  </form>
+</div>
