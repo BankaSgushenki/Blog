@@ -8,8 +8,10 @@
  * Controller of the myBlog
  */
 
-angular.module('myBlog').controller('ArticlesCtrl', function ($scope, $http, ArticlesService) {
-  	$scope.division;
+angular.module('myBlog').controller('ArticlesCtrl', function ($scope, $http, $routeParams, ArticlesService) {
+  	$scope.division = $routeParams.division;
+    if ($scope.division === "latest") $scope.division = '';
+
     $scope.articles = ArticlesService.getArticles();
 
     if (typeof $scope.articles == 'undefined') {
@@ -22,12 +24,23 @@ angular.module('myBlog').controller('ArticlesCtrl', function ($scope, $http, Art
         	});
     }
     $scope.predicate = 'date';
+}).
 
-    $scope.isActive = function (division) {
-     		if (division === $scope.division) return true;
+directive("articlesList", function () {
+    return {
+        restrict: "E",
+        templateUrl: "./views/articles.html"
     }
-
-     $scope.setCurrentDivision = function (division) {
-    	 $scope.division = division;
+}).
+directive("topNavigation", function () {
+    return {
+        restrict: "E",
+        templateUrl: "./views/top-navigation.html"
     }
-  });
+}).
+directive("about", function () {
+    return {
+        restrict: "E",
+        templateUrl: "./views/about.html"
+    }
+});

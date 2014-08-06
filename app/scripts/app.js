@@ -24,13 +24,17 @@ angular
         templateUrl: 'views/articles.html',
         controller: 'ArticlesCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/main', {
+        templateUrl: 'views/main.html',
+        controller: 'MainInformationCtrl'
       })
-      .when('/articles', {
+      .when('/articles/:division', {
         templateUrl: 'views/articles.html',
         controller: 'ArticlesCtrl'
+      })
+      .when('/article/:id', {
+        templateUrl: 'views/single-article.html',
+        controller: 'SingleArticleCtrl'
       }) 
       .when('/new-article', {
         templateUrl: 'views/new-article.html',
