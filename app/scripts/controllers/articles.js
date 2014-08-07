@@ -24,23 +24,4 @@ angular.module('myBlog').controller('ArticlesCtrl', function ($scope, $http, $ro
         	});
     }
     $scope.predicate = 'date';
-}).
-
-directive("articlesList", function () {
-    return {
-        restrict: "E",
-        templateUrl: "./views/articles.html"
-    }
-}).
-directive("topNavigation", function () {
-    return {
-        restrict: "E",
-        templateUrl: "./views/top-navigation.html"
-    }
-}).
-directive("about", function () {
-    return {
-        restrict: "E",
-        templateUrl: "./views/about.html"
-    }
 });

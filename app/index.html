@@ -12,6 +12,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -23,6 +24,7 @@
     <!-- Add your site or application content here -->
     <a ng-href="#/main"><img src = "./images/logo.jpg" class = "center-block"></a>
     <top-navigation></top-navigation>
+    <toaster-container></toaster-container>
     <div ng-view="" ng-controller = "ArticlesCtrl" class = "container"></div>
     <about></about>
 
@@ -46,6 +48,7 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -58,6 +61,7 @@
         <script src="scripts/controllers/navigation-controller.js"></script>
         <script src="scripts/controllers/single-article.js"></script>
         <script src="scripts/services/articles-service.js"></script>
+        <script src="scripts/directives/directives.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- endbuild -->
