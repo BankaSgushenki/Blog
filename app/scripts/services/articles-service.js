@@ -4,17 +4,14 @@ angular.module('myBlog').service('ArticlesService', function ($http, $rootScope,
 	var articles;
 
 	if (typeof articles == 'undefined') {
-    	/*$http({method: 'GET', url: 'http://54.72.3.96:3000/posts'}).
+    	$http({method: 'GET', url: 'http://54.72.3.96:3000/posts'}).
         	success(function(data, status) {
         		articles = data;
         		$rootScope.$broadcast('loading-finished');
         	}).
          	error(function(data, status) {
          		console.log(status);
-        	});*/
-		var test = $resource("http://54.72.3.96:3000/posts");
-		articles = new test();
-		console.log(articles);
+        	});
     }
 
 	this.getArticles = function () {
