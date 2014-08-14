@@ -1,7 +1,21 @@
 'use strict';
 
-angular.module('myBlog').service('ArticlesService', function () {
+angular.module('myBlog').service('ArticlesService', function ($http, $rootScope, $resource) {
 	var articles;
+
+	if (typeof articles == 'undefined') {
+    	/*$http({method: 'GET', url: 'http://54.72.3.96:3000/posts'}).
+        	success(function(data, status) {
+        		articles = data;
+        		$rootScope.$broadcast('loading-finished');
+        	}).
+         	error(function(data, status) {
+         		console.log(status);
+        	});*/
+		var test = $resource("http://54.72.3.96:3000/posts");
+		articles = new test();
+		console.log(articles);
+    }
 
 	this.getArticles = function () {
 		return articles;
@@ -9,10 +23,11 @@ angular.module('myBlog').service('ArticlesService', function () {
 	this.setArticles = function (items) {
 		articles = items;
 	};
-	this.addToArticles = function(item) {
-		articles.push(item);
+	this.addToArticles = function(data) {
+		articles.push(data);
+		console.log(data);
 	};
 	this.getByArticleId = function(id) {
-		return articles.filter(function (x) { if (x.id == id) return x})[0];
+		return articles.filter(function (x) { if (x._id == id) return x})[0];
 	};
 });

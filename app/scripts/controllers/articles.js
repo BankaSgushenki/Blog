@@ -12,16 +12,9 @@ angular.module('myBlog').controller('ArticlesCtrl', function ($scope, $http, $ro
   	$scope.division = $routeParams.division;
     if ($scope.division === "latest") $scope.division = '';
 
-    $scope.articles = ArticlesService.getArticles();
-
-    if (typeof $scope.articles == 'undefined') {
-    	$http({method: 'GET', url: 'articles.json'}).
-        	success(function(data, status) {
-        		$scope.articles = ArticlesService.setArticles(data.articles);
-        	}).
-         	error(function(data, status) {
-         		console.log(status);
-        	});
-    }
+    $scope.$on('loading-finished', function(event, args) {
+      $scope.articles = ArticlesService.getArticles();
+    });
+    
     $scope.predicate = 'date';
 });

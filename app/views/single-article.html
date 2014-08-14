@@ -1,9 +1,7 @@
 <div class = "article">
-	<img ng-src="{{article.imageSrc}}" class="curved-vt-2">
+	<img ng-src="{{article.image}}" class="curved-vt-2">
 	<h2>{{article.title}}</h2>
 	<div class = "article-info"> In {{article.date | date : format}}  by  {{article.author}}
 	</div>
-	<p>{{article.text}}</p>
+	<p>{{article.body}}</p>
 </div>
-
-

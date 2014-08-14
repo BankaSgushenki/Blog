@@ -1,9 +1,9 @@
 <div class="jumbotron" ng-controller = "newArticleCtrl">
   <form name="additionForm" novalidate class = "addition-form" ng-submit="submit()">
   	Author: <input type = "text" required placeholder = "Your name" name = "author" ng-model = "article.author">
-  	Image: <input type = "text" placeholder = "Image URL"  name = "img" ng-model = "article.imageSrc">
+  	Image: <input type = "text" placeholder = "Image URL"  name = "img" ng-model = "article.image">
   	Title: <input type = "text" required placeholder = "Article's title" name = "title" ng-model = "article.title" required>
-  	Text:  <textarea name="text" required rows="6" name = "text" ng-model = "article.text"></textarea>
-  	<input type="submit" value="Send" class="btn">
+  	Text:  <textarea name="text" required rows="6" name = "text" ng-model = "article.body"></textarea>
+  	<input type="submit" ng-disabled="additionForm.$invalid" value="Send" class="btn">
   </form>
 </div>
