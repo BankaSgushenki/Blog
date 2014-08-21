@@ -1,19 +1,11 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name myBlog.controller:newArticleCtrl
- * @description
- * # newArticleCtrl
- * Controller of the myBlog
- */
-
 angular.module('myBlog')
-  .controller('newArticleCtrl', function ($scope, ArticlesService) {
+  .controller('newArticleCtrl', function($scope, ArticlesService, Post) {
   $scope.article = {};
   $scope.submit = function() {
-    //$scope.article.division = "js";
     $scope.article.date = new Date();
-  	ArticlesService.addToArticles($scope.article);
+  	var article = new Post($scope.article);
+  	article.$save();
   	}
   });

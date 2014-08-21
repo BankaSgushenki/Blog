@@ -4,6 +4,7 @@
 	<div class = "article-info"> In {{article.date | date : format}}  by  {{article.author}}
 	</div>
 	<p>{{article.body}}</p>
+	<button class = "btn btn-danger" ng-click = "deleteArticle(article)">Delete</button>
 </div>
 
 

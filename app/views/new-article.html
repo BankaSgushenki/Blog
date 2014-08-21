@@ -7,3 +7,7 @@
   	<input type="submit" ng-disabled="additionForm.$invalid" value="Send" class="btn">
   </form>
 </div>
+
+<div ng-controller="toasterController">
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+</div>
